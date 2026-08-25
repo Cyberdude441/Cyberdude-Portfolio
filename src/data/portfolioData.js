@@ -33,61 +33,80 @@ export const personalInfo = {
 
 export const caseStudyProjects = [
   {
-    id: "brute-force-defense",
+    id: "bruteforce-detector",
     title: "Brute Force Defense System",
-    category: "Intrusion Prevention & Automation",
-    domain: "Network Security & Active Defense",
-    overview: "An autonomous intrusion mitigation framework designed to identify and throttle coordinated credential-stuffing attacks in real-time.",
+    category: "Intrusion Prevention & Active Defense",
+    domain: "Network Security & IPS Automation",
+    overview: "An autonomous intrusion mitigation framework built with Python and hardware telemetry designed to identify and throttle coordinated brute-force and credential-stuffing attacks.",
     problem: "Traditional rate limiters struggle with distributed low-and-slow authentication attacks and often impose high false-positive overhead on genuine users.",
-    solution: "Engineered an ML-driven adaptive rate-limiting engine integrated with hardware sensor/controller telemetry and Netfilter queues to dynamically throttle malicious source sockets while preserving legitimate user sessions.",
-    impact: "Successfully reduced brute-force login exposure by 94% during simulated high-concurrency attack tests.",
-    technologies: ["Python", "Machine Learning", "Arduino", "Flask", "Netfilter / Iptables", "Prometheus"],
+    solution: "Engineered an ML-driven adaptive rate-limiting engine integrated with hardware sensor/controller telemetry and socket filters to dynamically throttle malicious source sockets while preserving legitimate user sessions.",
+    impact: "Successfully reduced brute-force login attempts by 94% during simulated high-concurrency attack testing.",
+    technologies: ["Python", "Flask", "Arduino", "Machine Learning", "Iptables", "Socket Queues"],
     architecture: [
       "Sub-millisecond packet inspection via low-level socket queues",
       "Adaptive exponential backoff tarpit consuming malicious socket pools",
       "Hardware telemetry alerts for physical intrusion triggers",
       "Automated IP ban list synchronization"
     ],
-    github: "https://github.com/Cyberdude441/Brute-Force-Defense-System",
-    demo: "https://defense.cyberdude.dev"
+    github: "https://github.com/Cyberdude441/bruteforce-detector",
+    demo: "https://github.com/Cyberdude441/bruteforce-detector"
   },
   {
-    id: "cyber-sentinel-labs",
-    title: "Cyber Sentinel Labs",
-    category: "Threat Monitoring Platform",
-    domain: "SOC Telemetry & Detection Engineering",
-    overview: "A distributed containerized honeypot system designed to capture active adversary probing, extract IOCs, and correlate attacks with MITRE ATT&CK.",
-    problem: "Security teams often lack early-warning visibility into automated scanning sweeps and zero-day probing before attacks reach internal production endpoints.",
-    solution: "Constructed a multi-container threat telemetry pipeline using Docker and SIEM log forwarders that ingests unsolicited network traffic, extracts attack signatures, and correlates them with adversary techniques.",
-    impact: "Streamlined threat triage by categorizing over 14,000+ indicators of compromise (IOCs) into actionable defense feeds.",
-    technologies: ["Docker", "MongoDB", "SIEM (ELK)", "Python", "Elasticsearch", "MITRE ATT&CK"],
+    id: "api-sentinel",
+    title: "API Sentinel",
+    category: "API Security & Threat Telemetry",
+    domain: "High-Throughput Endpoint Monitoring",
+    overview: "A lightning-fast, zero-overhead API security sentinel engine built in Rust to intercept unauthorized access, token probing, and malicious payload injections.",
+    problem: "Modern microservices expose thousands of API routes that standard WAFs fail to inspect at high RPS without introducing unacceptable latency.",
+    solution: "Constructed a multi-threaded Rust packet interceptor and API gateway monitor that inspects incoming HTTP requests, validates authorization headers, detects anomalous access spikes, and drops adversarial probes in sub-millisecond time.",
+    impact: "Provides wire-speed API security telemetry with near-zero latency overhead, safeguarding microservice endpoints from automated abuse.",
+    technologies: ["Rust", "Async Runtime (Tokio)", "REST APIs", "Network Telemetry", "JSON Web Tokens", "Rate Limiting"],
     architecture: [
-      "Containerized distributed sensor nodes for isolated honeypot deployments",
-      "Real-time event stream parsing and GeoIP/ASN enrichment",
-      "Integrated SIEM correlation rules for suspicious command sequences",
-      "High-throughput document storage with MongoDB"
+      "Memory-safe asynchronous pipeline processing thousands of requests per second",
+      "Dynamic anomaly detection for token replay and broken object-level authorization (BOLA)",
+      "Structured telemetry logging and real-time security alerting",
+      "Configurable rule engine for custom enterprise API policies"
     ],
-    github: "https://github.com/Cyberdude441/Cyber-Sentinel-Labs",
-    demo: "https://sentinel-labs.cyberdude.dev"
+    github: "https://github.com/Cyberdude441/API-Sentinel-main",
+    demo: "https://github.com/Cyberdude441/API-Sentinel-main"
   },
   {
-    id: "osint-toolkit",
-    title: "OSINT Intelligence Toolkit",
+    id: "subdomain-enumerator-osint",
+    title: "Subdomain Enumerator OSINT",
     category: "Reconnaissance Framework",
-    domain: "Threat Intelligence & Surface Mapping",
-    overview: "An automated open-source intelligence collection framework for passive attack surface discovery and credential leak auditing.",
-    problem: "Manual security reconnaissance across disparate OSINT databases (Shodan, Certificate Transparency, DNS records) is time-consuming and difficult to aggregate.",
-    solution: "Built a high-concurrency asynchronous reconnaissance pipeline that aggregates target domain footprints, certificate logs, subdomains, and Shodan service banners into structured intelligence dossiers.",
-    impact: "Accelerated external attack surface mapping by 10x, enabling rapid identification of exposed legacy services and forgotten subdomains.",
-    technologies: ["Python", "Asyncio", "Shodan API", "BeautifulSoup", "SQLite", "NetworkX"],
+    domain: "Attack Surface Mapping & OSINT",
+    overview: "An automated open-source intelligence collection framework for passive attack surface discovery, subdomain harvesting, and DNS footprint auditing.",
+    problem: "Manual security reconnaissance across disparate OSINT databases (Certificate Transparency, DNS records, search indices) is slow and hard to correlate.",
+    solution: "Built a high-concurrency asynchronous reconnaissance pipeline that aggregates target domain footprints, certificate logs (crt.sh), subdomains, and Shodan service banners into structured intelligence dossiers.",
+    impact: "Optimized external attack surface discovery and OSINT collection by 71%, enabling rapid identification of forgotten legacy assets.",
+    technologies: ["Python", "Asyncio", "DNS Python", "Shodan API", "CRT.sh", "BeautifulSoup"],
     architecture: [
-      "Asynchronous parallel querying across 10+ open intelligence sources",
-      "Automated subdomain harvesting and DNS resolution validation",
-      "Structured JSON and PDF intelligence dossier exports",
-      "Relationship mapping between domains, IP ranges, and SSL certificates"
+      "Asynchronous parallel querying across Certificate Transparency logs and public DNS resolvers",
+      "Automated subdomain harvesting and active CNAME/A-record resolution validation",
+      "Structured output generation for downstream vulnerability scanning",
+      "Subdomain takeover risk identification for unclaimed third-party buckets"
     ],
-    github: "https://github.com/Cyberdude441/OSINT-Intelligence-Toolkit",
-    demo: "https://osint.cyberdude.dev"
+    github: "https://github.com/Cyberdude441/Subdomain-Enumerator-OSINT",
+    demo: "https://github.com/Cyberdude441/Subdomain-Enumerator-OSINT"
+  },
+  {
+    id: "cyberqwen-ai",
+    title: "CyberQwen AI",
+    category: "AI Threat Intelligence",
+    domain: "Automated Vulnerability & Malware Triage",
+    overview: "An AI-powered cybersecurity analysis assistant designed to assist SOC analysts in rapid vulnerability assessment, code security auditing, and log correlation.",
+    problem: "SOC analysts are inundated with hundreds of alert logs daily, causing alert fatigue and delayed mean-time-to-respond (MTTR).",
+    solution: "Developed an intelligent cybersecurity CLI and parsing pipeline that processes suspicious command sequences, PCAP summaries, and source code snippets to generate structured vulnerability reports and remediation guidance.",
+    impact: "Drastically accelerates incident response triage by generating actionable remediation steps and MITRE ATT&CK mappings in seconds.",
+    technologies: ["Python", "Large Language Models", "Prompt Engineering", "Security Automation", "MITRE ATT&CK", "Log Analysis"],
+    architecture: [
+      "Custom security prompt templates optimized for vulnerability assessment and code review",
+      "Automated extraction of IOCs (IPs, hashes, domains) from unstructured incident notes",
+      "Interactive CLI interface for security researchers and SOC operators",
+      "Local and API model backend support"
+    ],
+    github: "https://github.com/Cyberdude441/CyberQwen-AI",
+    demo: "https://github.com/Cyberdude441/CyberQwen-AI"
   }
 ];
 

@@ -163,8 +163,9 @@ drawJob(
 drawSectionHeader('PROJECTS');
 const projects = [
   { name: 'Brute Force Defense System', stack: 'Python, Arduino, Flask', desc: 'Built an ML-based rate-limiting system that reduced brute-force login attempts by 94%.' },
-  { name: 'Cyber Sentinel Labs', stack: 'Docker, MongoDB, SIEM', desc: 'Developed a containerized threat-monitoring platform with IOC mapping, improving detection efficiency by 67%.' },
-  { name: 'OSINT Intelligence Toolkit', stack: 'Python, Shodan', desc: 'Built an automated reconnaissance tool that optimized OSINT data collection by 71%.' }
+  { name: 'API Sentinel', stack: 'Rust, Async Tokio, REST', desc: 'High-throughput zero-overhead API security sentinel engine for intercepting unauthorized access.' },
+  { name: 'Subdomain Enumerator OSINT', stack: 'Python, Shodan, DNS', desc: 'Built an automated reconnaissance tool that optimized OSINT data collection by 71%.' },
+  { name: 'CyberQwen AI', stack: 'Python, LLMs, MITRE ATT&CK', desc: 'AI-powered security analysis assistant for automated vulnerability triage and incident response.' }
 ];
 
 projects.forEach(p => {
