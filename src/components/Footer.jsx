@@ -53,6 +53,18 @@ export const Footer = () => {
                 </a>
               </li>
               <li>
+                <a href={personalInfo.socials.tryhackme} target="_blank" rel="noreferrer" className="hover:text-cyber-matrix transition-colors flex items-center gap-2">
+                  <Terminal className="w-3.5 h-3.5 text-cyber-matrix" />
+                  <span>TryHackMe: imcyberdude</span>
+                </a>
+              </li>
+              <li>
+                <a href={personalInfo.socials.cylab} target="_blank" rel="noreferrer" className="hover:text-cyber-cyan transition-colors flex items-center gap-2">
+                  <Radio className="w-3.5 h-3.5 text-cyber-cyan" />
+                  <span>CyLab / picoCTF: cyberdude441</span>
+                </a>
+              </li>
+              <li>
                 <a href={`mailto:${personalInfo.socials.email}`} className="hover:text-cyber-cyan transition-colors flex items-center gap-2">
                   <Mail className="w-3.5 h-3.5" />
                   <span>Email: {personalInfo.socials.email}</span>

@@ -2,8 +2,8 @@
 
 [![Live Portfolio](https://img.shields.io/badge/Portfolio-LIVE-00f0ff?style=for-the-badge&logo=react)](https://cyberdude.dev)
 [![Cyber Clearance](https://img.shields.io/badge/Clearance-TOP_SECRET_//_SOC--L4-00ff66?style=for-the-badge)](https://github.com/Cyberdude441)
-[![TryHackMe](https://img.shields.io/badge/TryHackMe-Top_7%25-a855f7?style=for-the-badge&logo=tryhackme)](https://tryhackme.com/p/Cyberdude441)
-[![picoCTF](https://img.shields.io/badge/picoCTF-Rank_526-ff0055?style=for-the-badge)](https://picoctf.org)
+[![TryHackMe](https://img.shields.io/badge/TryHackMe-Top_7%25-a855f7?style=for-the-badge&logo=tryhackme)](https://tryhackme.com/p/imcyberdude)
+[![picoCTF / CyLab](https://img.shields.io/badge/picoCTF_CyLab-Rank_526-ff0055?style=for-the-badge)](https://learn.cylabacademy.org/users/cyberdude441)
 
 An AI-powered Security Operations Center (SOC) interface and personal portfolio for **Soumava Das** (`Cyberdude441`) — Cybersecurity Researcher, Digital Forensics Analyst, Threat Intelligence Enthusiast, and Penetration Tester.
 

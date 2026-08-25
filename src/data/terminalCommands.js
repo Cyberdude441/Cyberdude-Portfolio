@@ -87,8 +87,8 @@ export const executeTerminalCommand = (cmdStr) => {
         type: 'output',
         content: [
           '=== CYBER BATTLEFIELD & CTF METRICS ===',
-          `[+] TryHackMe: ${ctfBattlefield.stats[0].value} (${ctfBattlefield.stats[0].change})`,
-          `[+] picoCTF Global Rank: ${ctfBattlefield.stats[1].value} (${ctfBattlefield.stats[1].change})`,
+          `[+] TryHackMe: ${ctfBattlefield.stats[0].value} (${ctfBattlefield.stats[0].change}) -> https://tryhackme.com/p/imcyberdude`,
+          `[+] picoCTF / CyLab Rank: ${ctfBattlefield.stats[1].value} (${ctfBattlefield.stats[1].change}) -> https://learn.cylabacademy.org/users/cyberdude441`,
           `[+] Challenges Solved: ${ctfBattlefield.stats[2].value} across Web, DFIR, Crypto, Reverse Engineering`,
           `[+] National Hackathons: ${ctfBattlefield.stats[3].value}`,
           '',

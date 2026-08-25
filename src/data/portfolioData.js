@@ -30,7 +30,9 @@ export const personalInfo = {
     github: "https://github.com/Cyberdude441",
     linkedin: "https://www.linkedin.com/in/soumava-das-267999332",
     email: "soumavadas2005@gmail.com",
-    tryhackme: "https://tryhackme.com/p/Cyberdude441",
+    tryhackme: "https://tryhackme.com/p/imcyberdude",
+    cylab: "https://learn.cylabacademy.org/users/cyberdude441",
+    picoctf: "https://learn.cylabacademy.org/users/cyberdude441",
     phone: "+91 7001515109"
   },
   stats: [

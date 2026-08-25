@@ -34,16 +34,29 @@ export const CTFBattlefield = () => {
             </p>
           </div>
 
-          <a
-            href={personalInfo.socials.tryhackme}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-cyber-matrix/10 border border-cyber-matrix/40 hover:border-cyber-matrix text-xs font-mono font-bold text-cyber-matrix hover:bg-cyber-matrix/20 transition-all shadow-cyber-matrix"
-          >
-            <Flag className="w-4 h-4" />
-            <span>TRYHACKME PROFILE</span>
-            <ExternalLink className="w-3.5 h-3.5" />
-          </a>
+          <div className="flex flex-wrap items-center gap-3">
+            <a
+              href={personalInfo.socials.tryhackme}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-cyber-matrix/10 border border-cyber-matrix/40 hover:border-cyber-matrix text-xs font-mono font-bold text-cyber-matrix hover:bg-cyber-matrix/20 transition-all shadow-cyber-matrix"
+            >
+              <Flag className="w-4 h-4" />
+              <span>TRYHACKME [@imcyberdude]</span>
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+
+            <a
+              href={personalInfo.socials.cylab}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-cyber-cyan/10 border border-cyber-cyan/40 hover:border-cyber-cyan text-xs font-mono font-bold text-cyber-cyan hover:bg-cyber-cyan/20 transition-all shadow-cyber-cyan"
+            >
+              <Trophy className="w-4 h-4 text-amber-400" />
+              <span>CYLAB / PICOCTF [@cyberdude441]</span>
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+          </div>
         </div>
 
         {/* Top 4 Battlefield Stats Cards */}
