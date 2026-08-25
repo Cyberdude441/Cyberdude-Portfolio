@@ -122,16 +122,18 @@ export const Hero = ({ onDownloadResume }) => {
                 <span>LAUNCH SOC TERMINAL</span>
               </a>
 
-              <button
-                onClick={() => {
-                  cyberAudio.playAccessGranted();
-                  if (onDownloadResume) onDownloadResume();
-                }}
-                className="px-4 py-3 rounded-lg bg-cyber-dark/80 hover:bg-cyber-purple/20 border border-cyber-purple/40 hover:border-cyber-purple text-cyber-purple font-mono text-xs sm:text-sm flex items-center gap-2 transition-all"
+              <a
+                href="/Soumava_Das_Resume.pdf"
+                download="Soumava_Das_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => cyberAudio.playAccessGranted()}
+                className="px-4 py-3 rounded-lg bg-cyber-dark/80 hover:bg-cyber-purple/20 border border-cyber-purple/40 hover:border-cyber-purple text-cyber-purple font-mono text-xs sm:text-sm flex items-center gap-2 transition-all shadow-cyber-purple"
+                title="Download Soumava Das Resume (PDF / DOC)"
               >
                 <Download className="w-4 h-4" />
-                <span>RESUME</span>
-              </button>
+                <span>DOWNLOAD RESUME</span>
+              </a>
             </div>
 
             {/* Micro Stats Telemetry */}

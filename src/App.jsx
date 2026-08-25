@@ -12,14 +12,12 @@ import { Certifications } from './components/Certifications';
 import { EncryptedContact } from './components/EncryptedContact';
 import { Footer } from './components/Footer';
 import { EasterEggTerminal } from './components/EasterEggTerminal';
-import { ResumeModal } from './components/ResumeModal';
 import { CustomCursor } from './components/CustomCursor';
 import { MatrixRain } from './components/MatrixRain';
 import { cyberAudio } from './utils/soundEffects';
 
 export default function App() {
   const [isEasterEggOpen, setIsEasterEggOpen] = useState(false);
-  const [isResumeOpen, setIsResumeOpen] = useState(false);
 
   // Global Keyboard Listener for Easter Egg: CTRL + SHIFT + S
   useEffect(() => {
@@ -50,7 +48,7 @@ export default function App() {
       {/* Main Content Area */}
       <main className="relative z-10">
         {/* 1. Cinematic Hero Section with 3D Cyber Core */}
-        <Hero onDownloadResume={() => setIsResumeOpen(true)} />
+        <Hero />
 
         {/* 2. Interactive SOC Live Terminal Section */}
         <section id="terminal" className="py-20 bg-cyber-dark/60 relative border-t border-b border-cyber-border">
@@ -104,12 +102,6 @@ export default function App() {
       <EasterEggTerminal
         isOpen={isEasterEggOpen}
         onClose={() => setIsEasterEggOpen(false)}
-      />
-
-      {/* Resume Viewer / Print Modal */}
-      <ResumeModal
-        isOpen={isResumeOpen}
-        onClose={() => setIsResumeOpen(false)}
       />
     </div>
   );
