@@ -1,97 +1,64 @@
-# 🛡️ Soumava Das (Cyberdude441) — Cybersecurity Portfolio & AI SOC Interface
+# 🛡️ Soumava Das — Cybersecurity Researcher & Security Engineer
 
-[![Live Portfolio](https://img.shields.io/badge/Portfolio-LIVE-00f0ff?style=for-the-badge&logo=react)](https://cyberdude.dev)
-[![Cyber Clearance](https://img.shields.io/badge/Clearance-TOP_SECRET_//_SOC--L4-00ff66?style=for-the-badge)](https://github.com/Cyberdude441)
-[![TryHackMe](https://img.shields.io/badge/TryHackMe-Top_7%25-a855f7?style=for-the-badge&logo=tryhackme)](https://tryhackme.com/p/imcyberdude)
-[![picoCTF / CyLab](https://img.shields.io/badge/picoCTF_CyLab-Rank_526-ff0055?style=for-the-badge)](https://learn.cylabacademy.org/users/cyberdude441)
+[![Live Portfolio](https://img.shields.io/badge/Portfolio-LIVE-0ea5e9?style=for-the-badge&logo=react)](https://cyberdude.dev)
+[![TryHackMe](https://img.shields.io/badge/TryHackMe-Top_7%25-10b981?style=for-the-badge&logo=tryhackme)](https://tryhackme.com/p/imcyberdude)
+[![picoCTF / CyLab](https://img.shields.io/badge/picoCTF_CyLab-Rank_526-0ea5e9?style=for-the-badge)](https://learn.cylabacademy.org/users/cyberdude441)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-0077b5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/soumava-das-267999332)
 
-An AI-powered Security Operations Center (SOC) interface and personal portfolio for **Soumava Das** (`Cyberdude441`) — Cybersecurity Researcher, Digital Forensics Analyst, Threat Intelligence Enthusiast, and Penetration Tester.
+Professional personal portfolio of **Soumava Das** (`Cyberdude441`) — Cybersecurity Researcher, Digital Forensics Analyst, and Security Engineer.
 
 ---
 
-## ⚡ Key Highlights & Features
+## ⚡ Portfolio Overview
 
-- **🌐 Holographic 3D Cyber Core**: Interactive Three.js wireframe icosahedron, orbiting particle swarms, coordinate rings, and mouse parallax tilt.
-- **💻 Live SOC Interactive Terminal**: Built-in Linux/SOC shell with support for commands:
-  - `whoami`, `skills`, `projects`, `experience`, `ctf`, `certs`, `status`, `scan [target]`, `matrix`, `contact`, `clear`.
-- **📊 Real-time Security Dashboard**: Live simulated incident & threat telemetry feed, animated radar scanner, and automated defense indicators.
-- **📁 Declassified Security Dossier**: Academic background at KIIT University, security philosophy (Zero Trust, Purple Teaming), and core operational pillars.
-- **🛠️ Interactive Tactical Skills Matrix**: Categorized proficiencies across Offensive Security, DFIR, Threat Intelligence, Security Programming, and Cloud/SecOps.
-- **🚀 Flagship Projects Showcase**:
-  - *Cyber Sentinel Labs* (Distributed Honeypot & Threat Telemetry)
-  - *Brute Force Defense System* (Active Defense & IPS Automation)
-  - *OSINT Intelligence Toolkit* (Reconnaissance & Attack Surface Mapping)
-  - *DFIR Memory & Artifact Extractor* (Volatility 3 & Windows Event Log Parser)
-- **⏳ Chronological Experience Timeline**: Documented industry internships across **APCSIP** (2026), **Redynox** (2025), **Pinnacle Labs** (2025), and **The Red Users** (2025).
-- **⚔️ CTF Battlefield**: TryHackMe Top 7%, picoCTF Global Rank #526, and multi-discipline flag progress.
-- **📜 Verified Certifications**: Google Cloud Security, ChatGPT for Cybersecurity, Deloitte Cyber Simulation, NIELIT Govt. of India Certification.
-- **🔐 Encrypted Communications**: PGP-signed message transmitter and direct contact channels.
-- **🕹️ Easter Egg Console**: Press `Ctrl + Shift + S` or click the Easter egg HUD badge to trigger full-screen Matrix streaming and root breach console.
-- **🔊 Cyber SFX Synthesizer**: Built with Web Audio API for tactical keypress chirps and command sounds.
+Designed with modern enterprise SaaS aesthetics (inspired by Vercel, Linear, and Datadog), focusing on clean technical hierarchy, case studies, and verified credentials:
+
+- **Executive Introduction**: Clear value proposition, verified metrics (4 internships, picoCTF #526, TryHackMe Top 7%, 8.4 CGPA), and interactive security telemetry preview.
+- **Academic & Engineering Dossier**: B.Tech CSE at KIIT University (2024–2028), research domains, and core security philosophy.
+- **Chronological Experience**: Clean timeline of industry internships across **APCSIP-2026** (Amroha Police Cyber Security Internship Program), **Redynox**, **Pinnacle Lab**, and **The Red Users**.
+- **Case Study Projects**:
+  - *Brute Force Defense System* (ML-based adaptive rate limiting reducing brute-force login exposure by 94%)
+  - *Cyber Sentinel Labs* (Distributed containerized honeypot telemetry & IOC correlation)
+  - *OSINT Intelligence Toolkit* (Asynchronous multi-source reconnaissance framework)
+- **Technical Arsenal**: Structured categories across Offensive Security, Digital Forensics (DFIR), Threat Intelligence & SIEM, OSINT, Programming, and Cloud/Infrastructure.
+- **Competitive Achievements & Certifications**: Verified TryHackMe, picoCTF, Hackathon podiums, Google Cloud Security, ChatGPT AI Security, Deloitte, and NIELIT credentials.
+- **Direct Communication**: 1-click Gmail composer, direct email copy, and direct social channel access.
 
 ---
 
 ## 🛠️ Tech Stack
 
 - **Framework**: React 18 + Vite
-- **Styling**: Tailwind CSS (Dark Cyber Aesthetics, Scanlines, Glassmorphism, Glows)
-- **3D Graphics**: Three.js
-- **Animations**: CSS Keyframes, Web Audio API SFX
-- **Icons**: Lucide React + Custom Brand Vector Components
+- **Styling**: Tailwind CSS (Enterprise Dark Mode, Slate Theme, Inter Typography)
+- **Icons**: Lucide React + Custom SVG Brand Components
 - **Deployment**: Vercel / Netlify / GitHub Pages compatible
 
 ---
 
-## 🚀 Quickstart & Local Development
+## 🚀 Local Development
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/Cyberdude441/cyberdude-portfolio.git
-   cd cyberdude-portfolio
-   ```
-
-2. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-
-3. **Start the development server**:
-   ```bash
-   npm run dev
-   ```
-
-4. **Build for production**:
-   ```bash
-   npm run build
-   ```
-
-5. **Preview production build locally**:
-   ```bash
-   npm run preview
-   ```
-
----
-
-## 🌐 Deploy to Vercel or Netlify
-
-### Vercel:
 ```bash
-npm install -g vercel
-vercel
-```
+# Clone the repository
+git clone https://github.com/Cyberdude441/Cyberdude-Portfolio.git
+cd Cyberdude-Portfolio
 
-### Netlify:
-```bash
-npm install -g netlify-cli
-netlify deploy --prod --dir=dist
+# Install dependencies
+npm install
+
+# Run local development server
+npm run dev
+
+# Build production bundle
+npm run build
 ```
 
 ---
 
-## 👤 Author
+## 👤 Author & Contact
 
 - **Soumava Das (Cyberdude441)**
-- **GitHub**: [@Cyberdude441](https://github.com/Cyberdude441)
-- **LinkedIn**: [soumava-das-267999332](https://www.linkedin.com/in/soumava-das-267999332)
 - **Email**: `soumavadas2005@gmail.com`
+- **LinkedIn**: [soumava-das-267999332](https://www.linkedin.com/in/soumava-das-267999332)
+- **GitHub**: [@Cyberdude441](https://github.com/Cyberdude441)
+- **TryHackMe**: [@imcyberdude](https://tryhackme.com/p/imcyberdude)
 - **Institution**: B.Tech CSE @ KIIT University, Bhubaneswar

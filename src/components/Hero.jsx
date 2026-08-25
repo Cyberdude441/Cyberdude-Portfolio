@@ -1,159 +1,196 @@
-import React, { useState, useEffect } from 'react';
-import { Shield, Terminal, ArrowRight, Download, Radio, Lock, Activity, Award, ExternalLink } from 'lucide-react';
-import { CyberGlobe3D } from './CyberGlobe3D';
+import React, { useState } from 'react';
+import { ArrowRight, Download, Mail, Shield, CheckCircle2, Terminal, Activity, FileText, ChevronRight, Lock } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
-import { cyberAudio } from '../utils/soundEffects';
 
-export const Hero = ({ onDownloadResume }) => {
-  const [roleIndex, setRoleIndex] = useState(0);
-  const [typedRole, setTypedRole] = useState('');
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [logIndex, setLogIndex] = useState(0);
-
-  const roles = personalInfo.roles;
-  const logs = personalInfo.heroTypingSequence;
-
-  // Typing effect for rotating titles
-  useEffect(() => {
-    const currentRole = roles[roleIndex];
-    let typingSpeed = isDeleting ? 40 : 80;
-
-    if (!isDeleting && typedRole === currentRole) {
-      const timeout = setTimeout(() => setIsDeleting(true), 2200);
-      return () => clearTimeout(timeout);
-    } else if (isDeleting && typedRole === '') {
-      setIsDeleting(false);
-      setRoleIndex((prev) => (prev + 1) % roles.length);
-      return;
-    }
-
-    const timer = setTimeout(() => {
-      setTypedRole(
-        isDeleting
-          ? currentRole.substring(0, typedRole.length - 1)
-          : currentRole.substring(0, typedRole.length + 1)
-      );
-    }, typingSpeed);
-
-    return () => clearTimeout(timer);
-  }, [typedRole, isDeleting, roleIndex, roles]);
-
-  // Rotating log lines
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setLogIndex((prev) => (prev + 1) % logs.length);
-    }, 2800);
-    return () => clearInterval(interval);
-  }, [logs.length]);
+export const Hero = () => {
+  const [activeTab, setActiveTab] = useState('telemetry');
 
   return (
-    <section className="relative pt-24 sm:pt-28 pb-16 md:pb-24 overflow-hidden bg-cyber-grid">
-      {/* Radial Background Glow Layers */}
-      <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyber-cyan/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/3 right-1/4 translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyber-purple/10 rounded-full blur-[120px] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 border-b border-surface-border bg-subtle-grid">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
-          {/* Left Column: Intelligence Dossier & Callouts */}
-          <div className="lg:col-span-7 space-y-6 z-10">
-            {/* Live Security Clearance & Sequence Badge */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-cyber-card/90 border border-cyber-cyan/30 text-xs font-mono text-cyber-cyan backdrop-blur-md shadow-cyber-cyan">
-              <span className="w-2 h-2 rounded-full bg-cyber-cyan animate-ping" />
-              <span className="font-semibold text-slate-300">SECURITY CLEARANCE:</span>
-              <span className="text-cyber-cyan">{personalInfo.securityClearance}</span>
+          {/* Left Column: Personal Introduction */}
+          <div className="lg:col-span-7 space-y-6">
+            
+            {/* Status Pill */}
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-surface-border text-xs font-medium text-text-secondary">
+              <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
+              <span>Available for Cybersecurity Roles &amp; Research</span>
             </div>
 
-            {/* Main Greeting & Name */}
-            <div className="space-y-2">
-              <div className="flex items-center gap-2 text-slate-400 font-mono text-sm sm:text-base tracking-widest uppercase">
-                <span className="text-cyber-cyan">&gt;&gt;</span>
-                <span>SYSTEM AGENT INTRO</span>
-              </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white tracking-tight leading-none">
-                Hi, I'm{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyber-cyan via-teal-300 to-cyber-matrix">
-                  {personalInfo.name}
-                </span>
+            {/* Name & Heading */}
+            <div className="space-y-3">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-text-primary leading-[1.1]">
+                {personalInfo.name}
               </h1>
-            </div>
+              
+              <div className="text-lg sm:text-xl font-medium text-primary">
+                Cybersecurity Researcher &amp; Security Engineer
+              </div>
 
-            {/* Dynamic Typing Title */}
-            <div className="h-12 flex items-center">
-              <div className="text-xl sm:text-2xl lg:text-3xl font-mono font-bold text-cyber-cyan flex items-center gap-1">
-                <span>{typedRole}</span>
-                <span className="w-2.5 h-6 sm:h-8 bg-cyber-cyan animate-pulse inline-block" />
+              <div className="text-sm font-medium text-text-muted">
+                Digital Forensics &bull; Threat Intelligence &bull; Penetration Testing
               </div>
             </div>
 
-            {/* Animated Terminal Status Strip */}
-            <div className="bg-cyber-dark/90 border border-cyber-border rounded-lg p-3 font-mono text-xs text-slate-300 flex items-center justify-between shadow-inner">
-              <div className="flex items-center gap-2">
-                <span className="text-cyber-matrix">$</span>
-                <span className="text-cyber-cyan">{logs[logIndex]}</span>
-              </div>
-              <span className="text-[10px] text-cyber-matrix bg-cyber-matrix/10 px-2 py-0.5 rounded border border-cyber-matrix/20 animate-pulse">
-                LIVE
-              </span>
-            </div>
+            {/* Core Value Statement */}
+            <p className="text-base sm:text-lg text-text-secondary leading-relaxed max-w-xl">
+              &ldquo;{personalInfo.tagline}&rdquo;
+            </p>
 
-            {/* Professional Summary */}
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl font-sans">
+            <p className="text-sm text-text-muted leading-relaxed max-w-xl">
               {personalInfo.bio}
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-3.5 pt-2">
+            <div className="flex flex-wrap items-center gap-3 pt-2">
               <a
                 href="#projects"
-                onClick={() => cyberAudio.playCommandExecute()}
-                className="px-5 py-3 rounded-lg bg-cyber-cyan hover:bg-cyan-400 text-cyber-darker font-mono font-bold text-xs sm:text-sm flex items-center gap-2 shadow-cyber-cyan-lg hover:shadow-cyber-cyan transition-all transform hover:-translate-y-0.5"
+                className="px-5 py-2.5 rounded-md bg-primary hover:bg-primary-hover text-background font-semibold text-xs sm:text-sm flex items-center gap-2 transition-all shadow-sm"
               >
-                <span>VIEW PROJECTS</span>
+                <span>View Projects</span>
                 <ArrowRight className="w-4 h-4" />
-              </a>
-
-              <a
-                href="#terminal"
-                onClick={() => cyberAudio.playCommandExecute()}
-                className="px-5 py-3 rounded-lg bg-cyber-card hover:bg-cyber-card-hover border border-cyber-cyan/40 hover:border-cyber-cyan text-cyber-cyan font-mono text-xs sm:text-sm flex items-center gap-2 transition-all transform hover:-translate-y-0.5 shadow-cyber-cyan"
-              >
-                <Terminal className="w-4 h-4" />
-                <span>LAUNCH SOC TERMINAL</span>
               </a>
 
               <a
                 href="/Soumava_Das_Resume.pdf"
                 download="Soumava_Das_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => cyberAudio.playAccessGranted()}
-                className="px-4 py-3 rounded-lg bg-cyber-dark/80 hover:bg-cyber-purple/20 border border-cyber-purple/40 hover:border-cyber-purple text-cyber-purple font-mono text-xs sm:text-sm flex items-center gap-2 transition-all shadow-cyber-purple"
-                title="Download Soumava Das Resume (PDF / DOC)"
+                className="px-5 py-2.5 rounded-md bg-surface hover:bg-surface-hover border border-surface-border text-text-primary font-medium text-xs sm:text-sm flex items-center gap-2 transition-all"
               >
-                <Download className="w-4 h-4" />
-                <span>DOWNLOAD RESUME</span>
+                <Download className="w-4 h-4 text-text-secondary" />
+                <span>Download Resume</span>
+              </a>
+
+              <a
+                href="#contact"
+                className="px-4 py-2.5 rounded-md text-text-secondary hover:text-text-primary hover:bg-surface text-xs sm:text-sm font-medium transition-all"
+              >
+                <span>Contact</span>
               </a>
             </div>
 
-            {/* Micro Stats Telemetry */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-cyber-border/80">
-              {personalInfo.stats.slice(0, 4).map((st) => (
-                <div key={st.label} className="p-2.5 rounded-lg bg-cyber-dark/60 border border-cyber-border">
-                  <div className="text-lg sm:text-xl font-mono font-bold text-white">
-                    {st.value}
-                  </div>
-                  <div className="text-[11px] font-mono text-slate-400 truncate">
-                    {st.label}
-                  </div>
+            {/* Verified Quick Metrics */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-surface-border/60">
+              {personalInfo.metrics.map((m, idx) => (
+                <div key={idx} className="p-3 rounded-lg bg-surface/60 border border-surface-border">
+                  <div className="text-base font-semibold text-text-primary font-mono">{m.value}</div>
+                  <div className="text-[11px] text-text-muted mt-0.5">{m.label}</div>
                 </div>
               ))}
             </div>
+
           </div>
 
-          {/* Right Column: 3D Holographic Core */}
-          <div className="lg:col-span-5 relative flex items-center justify-center">
-            <CyberGlobe3D />
+          {/* Right Column: Clean Enterprise Security Dashboard Preview Card */}
+          <div className="lg:col-span-5">
+            <div className="rounded-xl bg-surface border border-surface-border shadow-card overflow-hidden">
+              
+              {/* Window Titlebar */}
+              <div className="bg-[#0B101D] px-4 py-3 border-b border-surface-border flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-slate-700" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-slate-700" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-slate-700" />
+                  <span className="text-xs font-mono text-text-muted ml-2">sec-ops.local // research-node</span>
+                </div>
+                <span className="inline-flex items-center gap-1 text-[11px] font-mono text-success bg-success-muted px-2 py-0.5 rounded">
+                  <span className="w-1.5 h-1.5 rounded-full bg-success" />
+                  ONLINE
+                </span>
+              </div>
+
+              {/* Card Tabs */}
+              <div className="flex border-b border-surface-border text-xs font-medium text-text-muted bg-[#0B101D]/50">
+                <button
+                  onClick={() => setActiveTab('telemetry')}
+                  className={`px-4 py-2.5 border-b-2 transition-colors ${
+                    activeTab === 'telemetry'
+                      ? 'border-primary text-text-primary bg-surface'
+                      : 'border-transparent hover:text-text-secondary'
+                  }`}
+                >
+                  Active Telemetry
+                </button>
+                <button
+                  onClick={() => setActiveTab('investigation')}
+                  className={`px-4 py-2.5 border-b-2 transition-colors ${
+                    activeTab === 'investigation'
+                      ? 'border-primary text-text-primary bg-surface'
+                      : 'border-transparent hover:text-text-secondary'
+                  }`}
+                >
+                  DFIR Pipeline
+                </button>
+              </div>
+
+              {/* Card Body */}
+              <div className="p-5 space-y-4">
+                {activeTab === 'telemetry' ? (
+                  <>
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="p-3 rounded-md bg-[#080B12] border border-surface-border">
+                        <div className="text-[11px] text-text-muted">Brute-Force IPS Mitigation</div>
+                        <div className="text-xl font-bold font-mono text-success mt-1">94.0%</div>
+                        <div className="text-[10px] text-text-muted mt-0.5">Adaptive socket throttling</div>
+                      </div>
+
+                      <div className="p-3 rounded-md bg-[#080B12] border border-surface-border">
+                        <div className="text-[11px] text-text-muted">IOC Telemetry Mapped</div>
+                        <div className="text-xl font-bold font-mono text-primary mt-1">14,200+</div>
+                        <div className="text-[10px] text-text-muted mt-0.5">MITRE ATT&amp;CK taxonomy</div>
+                      </div>
+                    </div>
+
+                    {/* Operational Status Checklist */}
+                    <div className="space-y-2 pt-2 border-t border-surface-border/60 text-xs">
+                      <div className="flex items-center justify-between text-text-secondary">
+                        <span className="flex items-center gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-success" />
+                          <span>SIEM Log Forwarding</span>
+                        </span>
+                        <span className="font-mono text-text-muted text-[11px]">Synced (ELK)</span>
+                      </div>
+
+                      <div className="flex items-center justify-between text-text-secondary">
+                        <span className="flex items-center gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-success" />
+                          <span>OWASP Vulnerability Matrix</span>
+                        </span>
+                        <span className="font-mono text-text-muted text-[11px]">Remediated</span>
+                      </div>
+
+                      <div className="flex items-center justify-between text-text-secondary">
+                        <span className="flex items-center gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-success" />
+                          <span>OSINT Recon Pipelines</span>
+                        </span>
+                        <span className="font-mono text-text-muted text-[11px]">Shodan / DNS OK</span>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <div className="space-y-3 font-mono text-xs">
+                    <div className="p-3 rounded-md bg-[#080B12] border border-surface-border space-y-1.5">
+                      <div className="text-text-muted text-[11px]">FORENSIC ARTIFACT PIPELINE</div>
+                      <div className="text-primary font-semibold">&gt; Autopsy &amp; FTK Imager: Verified</div>
+                      <div className="text-text-secondary">&gt; Mobile Forensics: Cellebrite / ALEAPP</div>
+                      <div className="text-success">&gt; Evidence Integrity: SHA-256 Hash Chain</div>
+                    </div>
+                    <div className="text-[11px] text-text-muted leading-relaxed font-sans">
+                      Standard operating procedures mapped directly to law enforcement &amp; enterprise incident response standards.
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Card Footer */}
+              <div className="bg-[#0B101D] px-4 py-2.5 border-t border-surface-border text-[11px] text-text-muted flex items-center justify-between font-mono">
+                <span>SOC Node: APCSIP / KIIT</span>
+                <span className="text-primary">TLS 1.3 Verified</span>
+              </div>
+
+            </div>
           </div>
 
         </div>
